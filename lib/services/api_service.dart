@@ -33,7 +33,8 @@ class ApiService {
     }
   }
 
-  Future<dynamic> post(String url, Map<String, dynamic> body) async {
+ static Future<dynamic> post(String url, Map<String, dynamic> body) async {
+
     try {
       final response = await http
           .post(

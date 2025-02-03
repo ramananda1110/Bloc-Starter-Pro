@@ -2,17 +2,15 @@
 
 A new Flutter project.
 
-## Getting Started
+## **Flutter Comprehensive BLoC Example**
 
-# Flutter Comprehensive BLoC Example
-
-## Table of Contents
+## **Table of Contents**
 1. [Project Overview](#project-overview)
 2. [Features](#features)
 3. [Technology Stack](#technology-stack)
 4. [Setup Instructions](#setup-instructions)
-    - [Prerequisites](#prerequisites)
-    - [Running the App](#running-the-app)
+   - [Prerequisites](#prerequisites)
+   - [Running the App](#running-the-app)
 5. [Project Structure](#project-structure)
 6. [API Usage](#api-usage)
 7. [Screens and Navigation Flow](#screens-and-navigation-flow)
@@ -24,32 +22,41 @@ A new Flutter project.
 
 ---
 
-## Project Overview
+## **Project Overview**
 A comprehensive Flutter example project demonstrating the use of the BLoC state management pattern. This app features secure login with API integration, internet availability check, user list retrieval, and persistent local data storage.
 
-## Features
+## **Features**
 - **Login API Integration:** Handles user authentication and session management.
 - **Internet Connectivity:** Detects internet availability using `InternetConnectionChecker`.
 - **User List Display:** Fetches a dummy user list from a free public API.
 - **Data Persistence:** Secure token storage using `SharedPreferences`.
 - **State Management:** Leveraging `BLoC`, `Cubit`, `BlocConsumer`, and `BlocListener`.
 
-## Technology Stack
+## **Technology Stack**
 - Flutter SDK
 - Dart Language
 - BLoC State Management
 - RESTful APIs
 - Shared Preferences for Local Storage
 
-## Setup Instructions
+## **Setup Instructions**
 
-### Prerequisites
+### **Prerequisites**
 1. Install Flutter SDK: [Flutter Installation Guide](https://flutter.dev/docs/get-started/install)
 2. Ensure a device or emulator is available for testing.
 
-### Running the App
+### **Running the App**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/flutter-comprehensive-bloc-example.git
-   cd flutter-comprehensive-bloc-example
+   git clone https://github.com/ramananda1110/Bloc-Starter-Pro.git
+   cd Bloc-Starter-Pro
 
+
+{
+"email": "eve.holt@reqres.in",
+"password": "cityslicka"
+}
+
+
+
+Let me know if you need any further edits!
