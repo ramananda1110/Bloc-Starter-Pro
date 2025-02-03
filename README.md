@@ -51,12 +51,13 @@ A comprehensive Flutter example project demonstrating the use of the BLoC state 
    git clone https://github.com/ramananda1110/Bloc-Starter-Pro.git
    cd Bloc-Starter-Pro
 
+2. Use the following dummy login credentials for testing:
+   ```bash
+   {
+   "email": "eve.holt@reqres.in",
+   "password": "cityslicka"
+   }
 
-{
-"email": "eve.holt@reqres.in",
-"password": "cityslicka"
-}
 
 
-
-Let me know if you need any further edits!
+Feel free to let me know if you need any more edits!
