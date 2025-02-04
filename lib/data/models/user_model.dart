@@ -4,7 +4,11 @@ class UserModel {
   final String email;
   final String username;
 
-  UserModel({required this.id, required this.name, required this.email, required this.username});
+  UserModel(
+      {required this.id,
+      required this.name,
+      required this.email,
+      required this.username});
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(

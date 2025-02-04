@@ -1,5 +1,5 @@
-import 'package:bloc_starter_pro/model/user_model.dart';
-import 'package:bloc_starter_pro/services/api_service.dart';
+import 'package:bloc_starter_pro/data/models/user_model.dart';
+import 'package:bloc_starter_pro/data/providers/api_service.dart';
 
 class UserRepository {
   Future<List<UserModel>> fetchUsers() async {

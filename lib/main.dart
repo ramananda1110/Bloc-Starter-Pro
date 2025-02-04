@@ -1,44 +1,41 @@
 import 'package:bloc_starter_pro/blocs/auth/auth_bloc.dart';
 import 'package:bloc_starter_pro/blocs/auth/auth_event.dart';
+import 'package:bloc_starter_pro/blocs/network/internet_cubit.dart';
 import 'package:bloc_starter_pro/blocs/user_bloc/user_event.dart';
-import 'package:bloc_starter_pro/cubits/internet_cubit.dart';
-import 'package:bloc_starter_pro/repositories/auth_repository.dart';
-import 'package:bloc_starter_pro/repositories/user_repository.dart';
-import 'package:bloc_starter_pro/utils/local_storage.dart';
+import 'package:bloc_starter_pro/config/route/app_router.dart';
+import 'package:bloc_starter_pro/data/repositories/auth_repository.dart';
+import 'package:bloc_starter_pro/data/repositories/user_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'blocs/user_bloc/user_bloc.dart';
-import 'pages/splash_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final token = await LocalStorage.getToken();
-  runApp(MyApp(initialRoute: token != null ? '/home' : '/'));
+
+  runApp(MyApp(initialRoute: '/'));
 }
 
 class MyApp extends StatelessWidget {
   final String initialRoute;
+  final AppRouter _appRouter = AppRouter();
 
-  MyApp({required this.initialRoute});
+  MyApp({required this.initialRoute, super.key});
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => InternetCubit()),
-        BlocProvider(create: (_) => AuthBloc(AuthRepository())),
         BlocProvider(
-          create: (context) =>
-              AuthBloc(AuthRepository())..add(AuthCheckStatus()),
-        ),
+            create: (_) => AuthBloc(AuthRepository())..add(AuthCheckStatus())),
         BlocProvider(
-          create: (context) =>
-              UserListBloc(UserRepository())..add(LoadUserList()),
-        ),
+            create: (_) => UserListBloc(UserRepository())..add(LoadUserList())),
       ],
-      child: const MaterialApp(
-        home: SplashPage(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: initialRoute,
+        onGenerateRoute: _appRouter.generateRoute,
       ),
     );
   }

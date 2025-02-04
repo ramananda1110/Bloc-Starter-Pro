@@ -11,7 +11,7 @@ class LocalStorage {
     return prefs.getString('auth_token');
   }
 
-  static  Future<void> clearToken() async {
+  static Future<void> clearToken() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('auth_token');
   }

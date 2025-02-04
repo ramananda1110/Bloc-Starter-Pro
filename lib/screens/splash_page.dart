@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../blocs/auth/auth_bloc.dart';
-import 'login_page.dart';
-import 'user_list_page.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -15,15 +13,11 @@ class SplashPage extends StatelessWidget {
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is AuthAuthenticated) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => UserListPage()),
-            );
+            Navigator.pushReplacementNamed(context, '/userList'
+                );
           } else if (state is AuthInitial) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => LoginPage()),
-            );
+            Navigator.pushReplacementNamed(context, '/login'
+                );
           }
         },
         child: const Center(

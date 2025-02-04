@@ -1,5 +1,5 @@
 import 'package:bloc_starter_pro/blocs/auth/auth_state.dart';
-import 'package:bloc_starter_pro/repositories/auth_repository.dart';
+import 'package:bloc_starter_pro/data/repositories/auth_repository.dart';
 import 'package:bloc_starter_pro/utils/local_storage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,6 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     on<LogoutRequested>((event, emit) async {
       await LocalStorage.clearToken();
+
       emit(AuthInitial());
     });
 

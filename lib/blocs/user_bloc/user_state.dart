@@ -1,4 +1,4 @@
-import 'package:bloc_starter_pro/model/user_model.dart';
+import 'package:bloc_starter_pro/data/models/user_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class UserListState extends Equatable {

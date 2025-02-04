@@ -3,19 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-
   static const int timeoutSeconds = 45;
-
-  Future<String> login(String baseUrl, String email, String password) async {
-    final response = await http
-        .post(Uri.parse(baseUrl), body: {"email": email, "password": password});
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      return data["token"];
-    } else {
-      throw Exception("Invalid login credentials");
-    }
-  }
 
   static Future<dynamic> get(String url) async {
     try {
@@ -33,8 +21,7 @@ class ApiService {
     }
   }
 
- static Future<dynamic> post(String url, Map<String, dynamic> body) async {
-
+  static Future<dynamic> post(String url, Map<String, dynamic> body) async {
     try {
       final response = await http
           .post(
