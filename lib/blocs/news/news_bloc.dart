@@ -23,5 +23,18 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
         emit(const NewsError("Failed to load news data"));
       }
     });
+
+    // Handle the search event
+    on<SearchNews>((event, emit) async {
+      emit(const NewsLoading());
+      try {
+        final searchUrl =
+            "https://newsdata.io/api/1/news?country=$country&apikey=$token&q=${event.query}&category=$category";
+        final news = await userRepository.fetchNews(searchUrl);
+        emit(NewsLoaded(news));
+      } catch (e) {
+        emit(const NewsError("Failed to load search results"));
+      }
+    });
   }
 }

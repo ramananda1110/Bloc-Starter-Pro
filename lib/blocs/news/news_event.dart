@@ -6,3 +6,11 @@ abstract class NewsEvent extends Equatable {
 }
 
 class LoadNewsList extends NewsEvent {}
+
+
+// Add this event to the NewsEvent class
+class SearchNews extends NewsEvent {
+  final String query;
+
+  SearchNews(this.query);
+}
