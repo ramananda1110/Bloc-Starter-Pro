@@ -17,10 +17,10 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
         final loadUrl =
             "https://newsdata.io/api/1/latest?country=$country&apikey=$token&category=$category";
 
-        final users = await userRepository.fetchNews(loadUrl);
-        emit(NewsLoaded(users));
+        final news = await userRepository.fetchNews(loadUrl);
+        emit(NewsLoaded(news));
       } catch (e) {
-        emit(const NewsError("Failed to load users"));
+        emit(const NewsError("Failed to load news data"));
       }
     });
   }

@@ -17,7 +17,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context, title: "Bloc Pro"),
+      appBar: buildAppBar(context, title: "Trending News"),
       body: BottomTabbedView(screen: screens),
     );
   }

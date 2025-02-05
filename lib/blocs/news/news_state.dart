@@ -23,7 +23,7 @@ class NewsLoading extends NewsState {
 }
 
 class NewsLoaded extends NewsState {
-  final List<News> news;
+  final List<NewsData> news;
 
   const NewsLoaded(this.news);
 

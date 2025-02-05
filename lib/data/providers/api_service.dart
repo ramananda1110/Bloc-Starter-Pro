@@ -7,12 +7,16 @@ class ApiService {
 
   static Future<dynamic> get(String url) async {
     try {
-      final response = await http
-          .get(Uri.parse(url))
-          .timeout(const Duration(seconds: timeoutSeconds));
+      final response = await http.get(
+        Uri.parse(url),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+      ).timeout(const Duration(seconds: timeoutSeconds));
 
       if (response.statusCode == 200) {
-        return json.decode(response.body);
+        // Decode response to handle special characters including Bangla text
+        return json.decode(utf8.decode(response.bodyBytes));
       } else {
         throw Exception("Failed to load data: ${response.statusCode}");
       }
