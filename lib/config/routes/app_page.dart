@@ -5,4 +5,5 @@ abstract class AppPage {
   static const user = '/user-list';
   static const main = '/main-screen';
   static const favorite = '/favorite-screen';
+  static const details = '/details-screen';
 }

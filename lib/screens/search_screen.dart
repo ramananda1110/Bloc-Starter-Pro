@@ -50,7 +50,7 @@ class SearchScreen extends StatelessWidget {
                         return ListTile(
                           title: Text(data.title ?? 'No Title'),
                           subtitle: Text(
-                            data.description!,
+                            data.description ?? "",
                             maxLines: 2,  // Limit to 2 lines
                             overflow: TextOverflow.ellipsis,  // Add "..." at the end
                           ),

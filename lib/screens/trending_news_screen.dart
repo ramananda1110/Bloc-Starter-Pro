@@ -2,18 +2,19 @@ import 'package:bloc_starter_pro/blocs/network/internet_cubit.dart';
 import 'package:bloc_starter_pro/blocs/news/news_bloc.dart';
 import 'package:bloc_starter_pro/blocs/news/news_event.dart';
 import 'package:bloc_starter_pro/blocs/news/news_state.dart';
+import 'package:bloc_starter_pro/config/routes/app_page.dart';
 import 'package:bloc_starter_pro/widgets/no_internet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class TrendingNewsScreen extends StatefulWidget {
+  const TrendingNewsScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<TrendingNewsScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<TrendingNewsScreen> {
   @override
   void initState() {
     // TODO: implement initState
@@ -88,7 +89,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         onTap: () {
-                          // Handle tap on the item (you can navigate to a detailed view here)
+                          // Navigator.pushReplacementNamed(context, AppPage.details);
+
+                          Navigator.pushNamed(
+                            context,
+                            AppPage.details,
+                            arguments: data,
+                          );
                         },
                       ),
                     );

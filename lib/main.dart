@@ -1,5 +1,6 @@
 import 'package:bloc_starter_pro/blocs/auth/auth_bloc.dart';
 import 'package:bloc_starter_pro/blocs/auth/auth_event.dart';
+import 'package:bloc_starter_pro/blocs/favorite/favorites_bloc.dart';
 import 'package:bloc_starter_pro/blocs/network/internet_cubit.dart';
 import 'package:bloc_starter_pro/blocs/news/news_bloc.dart';
 import 'package:bloc_starter_pro/blocs/user_bloc/user_event.dart';
@@ -36,6 +37,8 @@ class MyApp extends StatelessWidget {
             create: (_) => UserListBloc(UserRepository())..add(LoadUserList())),
         BlocProvider(
             create: (_) => NewsBloc(NewsRepository())),
+        BlocProvider(
+            create: (_) => FavoritesBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
